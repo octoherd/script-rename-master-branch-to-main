@@ -7,6 +7,8 @@
 
 ## Usage
 
+Note: Your GitHub account must have owner or admin permission in order to rename the default branch on a repository
+
 Minimal usage
 
 ```js
