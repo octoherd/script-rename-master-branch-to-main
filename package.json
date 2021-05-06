@@ -1,0 +1,32 @@
+{
+  "name": "@octoherd/script-rename-master-branch-to-main",
+  "version": "0.0.0-development",
+  "type": "module",
+  "exports": "./script.js",
+  "bin": {
+    "octoherd-script-rename-master-branch-to-main": "./cli.js"
+  },
+  "description": "Renames the default branch to main if it is currently set to master",
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node script.js"
+  },
+  "repository": "https://github.com/octoherd/script-rename-master-branch-to-main",
+  "keywords": [
+    "octoherd-script"
+  ],
+  "author": "Gregor Martynus (https://dev.to/gr2m)",
+  "license": "ISC",
+  "dependencies": {
+    "@octoherd/cli": "^3.3.1"
+  },
+  "devDependencies": {},
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
