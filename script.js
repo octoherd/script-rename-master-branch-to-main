@@ -19,6 +19,13 @@ export async function script(octokit, repository) {
     return;
   }
 
+  if (repository.archived) {
+    octokit.log.info(
+      `Repository is archived, ignoring`
+    );
+    return;
+  }
+
   await octokit.request("POST /repos/{owner}/{repo}/branches/{branch}/rename", {
     owner: repository.owner.login,
     repo: repository.name,
