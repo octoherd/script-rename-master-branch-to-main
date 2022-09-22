@@ -1,18 +1,20 @@
 name: Test
-on:
+"on":
   push:
     branches:
       - main
   pull_request:
-    types: [opened, synchronize]
-
+    types:
+      - opened
+      - synchronize
 jobs:
   test_matrix:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: ["12", "14"]
-
+        node_version:
+          - "12"
+          - "14"
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node_version }}
@@ -22,9 +24,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
-
-  # The "test" step can be required in branch protection and does not
-  # change each time the test matrix changes.
   test:
     runs-on: ubuntu-latest
     needs: test_matrix
