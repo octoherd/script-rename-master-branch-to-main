@@ -21,11 +21,6 @@
     "@octoherd/cli": "^5.0.0"
   },
   "devDependencies": {},
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "publishConfig": {
     "access": "public"
   }
